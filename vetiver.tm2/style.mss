@@ -1,9 +1,11 @@
 // Languages: name (local), name_en, name_fr, name_es, name_de
 @name: '[name_en]';
+@makiIcon: 'maki/[maki]' + '-12.svg';
 
 // Common Colors //
 @water: #c3e6ff;
 @park: #e3ead6;
+@building: #d5cec6;
 
 Map {
   background-color:#f4f4f4;
@@ -115,6 +117,14 @@ Map {
 // Water Features //
 
 #water {
+  ::bevel {
+   polygon-fill: #9fb1be;
+    polygon-geometry-transform: translate(-2,-2);
+  }
+   ::highlight {
+   polygon-fill: #d8efff;
+    polygon-geometry-transform: translate(2,2);
+  }
   polygon-fill: @water;
   polygon-gamma: 0.6;
 }
@@ -285,21 +295,45 @@ Map {
   }
    ::highlight {
     [zoom>=16] {
-      polygon-fill: #F5E1C9;
+      polygon-fill: #fcf7d6;
       polygon-geometry-transform: translate(-1,-1);
       image-filters:agg-stack-blur(3,3);
-      polygon-opacity: .8;
-      polygon-comp-op: screen;
+      polygon-opacity: .9;
+      //polygon-comp-op: screen;
   	}
   }
   ::highlight2 {
     [zoom>=16] {
-      polygon-fill: #fff;
+      polygon-fill: #fcf7d6;
       polygon-geometry-transform: translate(1,1);
-      polygon-opacity: 0.75;
-      polygon-comp-op: screen;
+      polygon-opacity: 0.7;
   	}
   }
-  polygon-fill: #D9D2CA;
+  polygon-fill: @building;
+}
+
+
+#poi_label::label {
+  	['type'='Park'] {
+      text-name: [name];
+      text-face-name: 'Source Sans Pro Regular';
+      text-fill: #333;
+      text-size: 13;
+      text-comp-op: multiply;
+      text-opacity: .5;
+    }
+}
+#poi_label {
+  ['type'='Library'],['type'='Post Office'],
+    ['type'='Theatre'], ['type'='Hospital'],
+    ['type'='Public Building'], ['type'='Attraction'],
+    ['type'='Sports Centre'], ['type'='Stadium'],
+    ['type'='Arts Centre']{
+    marker-file: url(@makiIcon);
+    marker-fill: #9c9995;
+    marker-line-color: #fff;
+    marker-line-width: 2;
+    marker-line-opacity: 1;
+  }
 }
 
