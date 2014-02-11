@@ -5,7 +5,7 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[Map data © OpenStreetMap contributors]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-77.86390542984009,40.79508190064578,17</Parameter>
+  <Parameter name="center">-77.86053657531738,40.798322610298584,16</Parameter>
   <Parameter name="description"><![CDATA[A clean, fresh map style emphasizing  tasteful textures, natural building shadows and the soft, warm glow of the sun. ]]></Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
@@ -996,7 +996,7 @@
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
     <Filter>([type] = 'town')</Filter>
-    <TextSymbolizer size="20" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="24" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
@@ -1029,7 +1029,7 @@
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([type] = 'suburb')</Filter>
-    <TextSymbolizer size="16" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="18" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -1045,7 +1045,7 @@
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([type] = 'neighbourhood')</Filter>
-    <TextSymbolizer size="16" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="18" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -1061,7 +1061,7 @@
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <Filter>([type] = 'hamlet')</Filter>
-    <TextSymbolizer size="16" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="18" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -1077,7 +1077,7 @@
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <Filter>([type] = 'village')</Filter>
-    <TextSymbolizer size="17" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer size="22" face-name="Source Sans Pro Regular" fill="#444444" wrap-width="100" wrap-before="true" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -1180,7 +1180,7 @@
 
 <Style name="road_label-labels" filter-mode="first">
   <Rule>
-    <TextSymbolizer face-name="Source Sans Pro Regular" fill="#a9a9a9" size="15" placement="line" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" avoid-edges="true" ><![CDATA[[name_en]]]></TextSymbolizer>
+    <TextSymbolizer face-name="Source Sans Pro Regular" fill="#a9a9a9" size="13" placement="line" wrap-width="100" wrap-before="true" halo-fill="#ffffff" halo-radius="2" avoid-edges="true" minimum-distance="75" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
 </Style>
 <Layer name="road_label"

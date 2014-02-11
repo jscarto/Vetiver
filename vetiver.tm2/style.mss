@@ -85,7 +85,7 @@ Map {
     text-halo-fill: #fff;
     text-halo-radius: 2px;
     [zoom>=10] { text-size: 16; }
-    [zoom>=12] { text-size: 20; }
+    [zoom>=12] { text-size: 24; }
   }
   [type='village'] {
     text-name: @name;
@@ -95,7 +95,7 @@ Map {
     text-wrap-width: 100;
     text-wrap-before: true;
     [zoom>=12] { text-size: 14; }
-    [zoom>=14] { text-size: 17; }
+    [zoom>=14] { text-size: 22; }
   }
   [type='hamlet'],
   [type='suburb'],
@@ -109,7 +109,7 @@ Map {
     text-halo-fill: #fff;
     text-halo-radius: 2px;
     [zoom>=14] { text-size: 14; }
-    [zoom>=16] { text-size: 16; }
+    [zoom>=16] { text-size: 18; }
   }
 }
 
@@ -254,13 +254,14 @@ Map {
    text-name: @name;
     text-face-name: 'Source Sans Pro Regular';
     text-fill: #a9a9a9;
-    text-size: 15;
+    text-size: 13;
     text-placement: line;
     text-wrap-width: 100;
     text-wrap-before: true;
     text-halo-fill: #fff;
     text-halo-radius: 2px;
     text-avoid-edges: true;
+    text-min-distance: 75;
 }
 
 // Buildings //
