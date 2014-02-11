@@ -3,7 +3,7 @@
 @makiIcon: 'maki/[maki]' + '-12.svg';
 
 // Common Colors //
-@water: #c3e6ff;
+@water: #CCE8FC;
 @park: #e3ead6;
 @building: #d5cec6;
 
@@ -117,16 +117,15 @@ Map {
 // Water Features //
 
 #water {
-  ::bevel {
+  ::edge {
    polygon-fill: #9fb1be;
-    polygon-geometry-transform: translate(-2,-2);
+    polygon-geometry-transform: translate(-1,-1);
   }
    ::highlight {
    polygon-fill: #d8efff;
     polygon-geometry-transform: translate(2,2);
   }
   polygon-fill: @water;
-  polygon-gamma: 0.6;
 }
 
 #water_label {
@@ -168,7 +167,7 @@ Map {
   [class='school'] {
     polygon-fill: #E6E8DC;  
   }
-    [class='park'] {
+    [class='park'], [class='pitch'] {
     ::shadow {
    	  polygon-fill: #798C6B;
    	  polygon-geometry-transform: translate(1,1);
