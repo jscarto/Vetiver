@@ -9,6 +9,7 @@ It was originally designed as a campus map of the Pennsylvania State University 
 ## Things that need doing:
 
 * Adjust street styles to add a recessed appearance
-* Give water a soft texture, north-west bevel
+* ~~Give water a soft texture, north-west bevel~~
 * Set type in a more distinct typeface + tweak street label repetitions
 * Standardize appearance across scale
+* Broaden use for general, large scale reference mapping
