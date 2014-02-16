@@ -5,7 +5,7 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[Map data © OpenStreetMap contributors]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-77.86448746919632,40.794060516383894,18</Parameter>
+  <Parameter name="center">-77.86418437957764,40.79599158950172,16</Parameter>
   <Parameter name="description"><![CDATA[A clean, fresh map style emphasizing  tasteful textures, natural building shadows and the soft, warm glow of the sun. ]]></Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
@@ -20,12 +20,12 @@
   <Rule>
     <Filter>([class] = 'park')</Filter>
     <PolygonSymbolizer fill="#e3ead6" />
-    <PolygonPatternSymbolizer file="grass.jpg" comp-op="multiply" opacity="0.2" />
+    <PolygonPatternSymbolizer file="grassTexture.jpg" comp-op="multiply" opacity="0.2" />
   </Rule>
   <Rule>
     <Filter>([class] = 'pitch')</Filter>
     <PolygonSymbolizer fill="#e3ead6" />
-    <PolygonPatternSymbolizer file="grass.jpg" comp-op="multiply" opacity="0.2" />
+    <PolygonPatternSymbolizer file="grassTexture.jpg" comp-op="multiply" opacity="0.2" />
   </Rule>
 </Style>
 <Style name="landuse-shadow" filter-mode="first">
@@ -125,6 +125,7 @@
 <Style name="water" filter-mode="first">
   <Rule>
     <PolygonSymbolizer fill="#cce8fc" />
+    <PolygonPatternSymbolizer file="waterTexture.png" comp-op="multiply" opacity="0.1" />
   </Rule>
 </Style>
 <Style name="water-highlight" filter-mode="first">

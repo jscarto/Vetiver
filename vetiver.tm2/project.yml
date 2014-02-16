@@ -8,15 +8,15 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - -77.86448746919632
-  - 40.794060516383894
-  - 18
+  - -77.86418437957764
+  - 40.79599158950172
+  - 16
 description: 'A clean, fresh map style emphasizing  tasteful textures, natural building shadows and the soft, warm glow of the sun. '
 format: "png8:m=h"
 interactivity_layer: ''
 maxzoom: 22
 minzoom: 0
-mtime: 1392162272277
+mtime: 1392576738252
 name: Vetiver
 scale: 1
 source: "mapbox:///mapbox.mapbox-streets-v4"

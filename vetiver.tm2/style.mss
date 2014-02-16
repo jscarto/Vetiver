@@ -125,7 +125,10 @@ Map {
    polygon-fill: #d8efff;
     polygon-geometry-transform: translate(2,2);
   }
-  polygon-fill: @water;
+  polygon-fill: @water; 
+  polygon-pattern-file: url(waterTexture.png);
+  polygon-pattern-comp-op: multiply;
+  polygon-pattern-opacity: .1;
 }
 
 #water_label {
@@ -175,7 +178,7 @@ Map {
     }
     ::main {
        polygon-fill: @park; 
-       polygon-pattern-file: url(grass.jpg);
+       polygon-pattern-file: url(grassTexture.jpg);
        polygon-pattern-comp-op: multiply;
        polygon-pattern-opacity: .2;
     }
