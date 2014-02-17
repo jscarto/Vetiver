@@ -118,11 +118,11 @@ Map {
 
 #water {
   ::edge {
-   polygon-fill: #9fb1be;
+    polygon-fill: #9fb1be;
     polygon-geometry-transform: translate(-1,-1);
   }
-   ::highlight {
-   polygon-fill: #d8efff;
+  ::highlight {
+    polygon-fill: #d8efff;
     polygon-geometry-transform: translate(2,2);
   }
   polygon-fill: @water; 
@@ -170,7 +170,7 @@ Map {
   [class='school'] {
     polygon-fill: #E6E8DC;  
   }
-    [class='park'], [class='pitch'] {
+  [class='park'], [class='pitch'] {
     ::shadow {
    	  polygon-fill: #798C6B;
    	  polygon-geometry-transform: translate(1,1);
@@ -253,7 +253,8 @@ Map {
 }
 
 #road_label::labels {
-   text-name: @name;
+  [class != 'path'] {
+    text-name: @name;
     text-face-name: 'Source Sans Pro Regular';
     text-fill: #a9a9a9;
     text-size: 13;
@@ -264,6 +265,7 @@ Map {
     text-halo-radius: 2px;
     text-avoid-edges: true;
     text-min-distance: 75;
+  }
 }
 
 // Buildings //
@@ -302,14 +304,15 @@ Map {
       polygon-geometry-transform: translate(-1,-1);
       image-filters:agg-stack-blur(3,3);
       polygon-opacity: .9;
-      //polygon-comp-op: screen;
+      polygon-comp-op: screen;
   	}
   }
   ::highlight2 {
     [zoom>=16] {
       polygon-fill: #fcf7d6;
       polygon-geometry-transform: translate(1,1);
-      polygon-opacity: 0.7;
+      polygon-opacity: 0.5;
+      polygon-comp-op: screen;
   	}
   }
   polygon-fill: @building;
@@ -317,21 +320,21 @@ Map {
 
 
 #poi_label::label {
-  	['type'='Park'] {
-      text-name: [name];
-      text-face-name: 'Source Sans Pro Regular';
-      text-fill: #333;
-      text-size: 13;
-      text-comp-op: multiply;
-      text-opacity: .5;
-    }
+  ['type'='Park'] {
+    text-name: [name];
+    text-face-name: 'Source Sans Pro Regular';
+    text-fill: #333;
+    text-size: 13;
+    text-comp-op: multiply;
+    text-opacity: .5;
+  }
 }
 #poi_label {
   ['type'='Library'],['type'='Post Office'],
-    ['type'='Theatre'], ['type'='Hospital'],
-    ['type'='Public Building'], ['type'='Attraction'],
-    ['type'='Sports Centre'], ['type'='Stadium'],
-    ['type'='Arts Centre']{
+  ['type'='Theatre'], ['type'='Hospital'],
+  ['type'='Public Building'], ['type'='Attraction'],
+  ['type'='Sports Centre'], ['type'='Stadium'],
+  ['type'='Arts Centre']{
     marker-file: url(@makiIcon);
     marker-fill: #9c9995;
     marker-line-color: #fff;
@@ -339,4 +342,3 @@ Map {
     marker-line-opacity: 1;
   }
 }
-
