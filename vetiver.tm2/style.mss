@@ -17,12 +17,13 @@ Map {
 
 #admin {
   line-join: round;
-  line-color: #bbe;
+  line-color: #333;
+  line-opacity: 0.25;
   [maritime=1] { line-color: darken(@water, 3%); }
   // Countries
   [admin_level=2] {
-    line-width: 1.4;
-    [zoom>=6] { line-width: 2; }
+    line-width: 1;
+    [zoom>=6] { line-width: 1; }
     [zoom>=8] { line-width: 4; }
     [disputed=1] { line-dasharray: 4,4; }
   }
@@ -44,19 +45,22 @@ Map {
   text-face-name: 'Source Sans Pro Bold';
   text-wrap-width: 100;
   text-wrap-before: true;
-  text-fill: #66a;
-  text-size: 12;
+  text-fill: #333;
+  text-size: 18;
+  text-transform: uppercase;
+  text-halo-fill: fadeout(@main, 50%);
+  text-halo-radius: 2px;
   [zoom>=3][scalerank=1],
   [zoom>=4][scalerank=2],
   [zoom>=5][scalerank=3],
   [zoom>=6][scalerank>3] {
-    text-size: 14;
+    text-size: 18;
   }
   [zoom>=4][scalerank=1],
   [zoom>=5][scalerank=2],
   [zoom>=6][scalerank=3],
   [zoom>=7][scalerank>3] {
-    text-size: 16;
+    text-size: 20;
   }
 }
 
@@ -77,6 +81,9 @@ Map {
     text-halo-radius: 3px;
     [zoom>=10] { text-size: 18; }
     [zoom>=12] { text-size: 24; }
+    [zoom <=6] {
+    	text-opacity: 0.5;
+  	}
   }
   [type='town'][zoom<=17] {
     text-name: @name;
@@ -122,13 +129,15 @@ Map {
 // Water Features //
 
 #water {
-  ::edge {
-    polygon-fill: #9fb1be;
-    polygon-geometry-transform: translate(-1,-1);
-  }
-  ::highlight {
-    polygon-fill: #d8efff;
-    polygon-geometry-transform: translate(2,2);
+  [zoom >= 16] {
+    ::edge {
+      polygon-fill: #9fb1be;
+      polygon-geometry-transform: translate(-1,-1);
+    }
+    ::highlight {
+      polygon-fill: #d8efff;
+      polygon-geometry-transform: translate(2,2);
+    }
   }
   polygon-fill: @water; 
   polygon-pattern-file: url(waterTexture.png);
@@ -175,11 +184,13 @@ Map {
   [class='school'] {
     polygon-fill: #E6E8DC;  
   }
-  [class='park'], [class='pitch'] {
+  [class='park'], [class='pitch'],  {
     ::shadow {
-   	  polygon-fill: #798C6B;
-   	  polygon-geometry-transform: translate(1,1);
-      polygon-opacity: 0.6;
+   	 [zoom >= 16]{ 
+        polygon-fill: #798C6B;
+   	  	polygon-geometry-transform: translate(1,1);
+      	polygon-opacity: 0.6;
+      }
     }
     ::main {
        polygon-fill: @park; 
@@ -215,7 +226,10 @@ Map {
 #bridge::outline {
   ['mapnik::geometry_type'=2] {
     line-color: #d7d7d7;
-    [zoom >= 16] {line-geometry-transform: translate(-.5,-.5);}
+    [zoom >= 16] {
+      line-geometry-transform: translate(-.5,-.5);
+      line-opacity: 0.5;
+    }
     [class='motorway'],[class='main'] {
       [zoom>=10] { line-width: 3; }
       [zoom>=12] { line-width: 5; }
