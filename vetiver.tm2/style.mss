@@ -6,9 +6,10 @@
 @water: #CCE8FC;
 @park: #e3ead6;
 @building: #d5cec6;
+@main: #f4f4f4;
 
 Map {
-  background-color:#f4f4f4;
+  background-color:@main;
 }
 
 
@@ -72,6 +73,8 @@ Map {
     text-size: 18;
     text-wrap-width: 100;
     text-wrap-before: true;
+    text-halo-fill: fadeout(@main, 30%);
+    text-halo-radius: 3px;
     [zoom>=10] { text-size: 18; }
     [zoom>=12] { text-size: 24; }
   }
@@ -82,7 +85,7 @@ Map {
     text-size: 14;
     text-wrap-width: 100;
     text-wrap-before: true;
-    text-halo-fill: #fff;
+    text-halo-fill: fadeout(@main, 30%);
     text-halo-radius: 2px;
     [zoom>=10] { text-size: 16; }
     [zoom>=12] { text-size: 24; }
@@ -94,6 +97,8 @@ Map {
     text-size: 14;
     text-wrap-width: 100;
     text-wrap-before: true;
+    text-halo-fill: fadeout(@main, 30%);
+    text-halo-radius: 2px;
     [zoom>=12] { text-size: 14; }
     [zoom>=14] { text-size: 22; }
   }
@@ -106,7 +111,7 @@ Map {
     text-size: 14;
     text-wrap-width: 100;
     text-wrap-before: true;
-    text-halo-fill: #fff;
+    text-halo-fill: fadeout(@main, 30%);
     text-halo-radius: 2px;
     [zoom>=14] { text-size: 14; }
     [zoom>=16] { text-size: 18; }
@@ -210,6 +215,7 @@ Map {
 #bridge::outline {
   ['mapnik::geometry_type'=2] {
     line-color: #d7d7d7;
+    [zoom >= 16] {line-geometry-transform: translate(-.5,-.5);}
     [class='motorway'],[class='main'] {
       [zoom>=10] { line-width: 3; }
       [zoom>=12] { line-width: 5; }
@@ -303,7 +309,7 @@ Map {
       polygon-fill: #fcf7d6;
       polygon-geometry-transform: translate(-1,-1);
       image-filters:agg-stack-blur(3,3);
-      polygon-opacity: .9;
+      polygon-opacity: .5;
       polygon-comp-op: screen;
   	}
   }
