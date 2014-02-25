@@ -152,9 +152,11 @@ Map {
   [zoom>=17] {
     text-name: @name;
     text-face-name: 'Source Sans Pro Italic';
-    text-fill: darken(@water, 30%);
-    text-size: 13;
+    text-fill: #333;
+    text-size: 15;
     text-wrap-width: 100;
+    text-comp-op: multiply;
+    text-opacity: 0.4;
     text-wrap-before: true;
   }
 }
@@ -201,21 +203,21 @@ Map {
   }
 }
 
-#area_label {
+/*#area_label {
   [class='park'] {
     [zoom<=13],  // automatic area filtering @ low zooms
     [zoom>=14][area>500000],
     [zoom>=16][area>10000],
     [zoom>=17] {
-      text-name: @name;
+      text-name: [name];
       text-face-name: 'Source Sans Pro Italic';
-      text-fill: darken(@park, 50%);
+      text-fill: #333;
       text-size: 14;
       text-wrap-width: 100;
       text-wrap-before: true;
     }
   }
-}
+}*/
 
 // Roads & Railways //
 
@@ -276,7 +278,12 @@ Map {
   [class != 'path'] {
     text-name: @name;
     text-face-name: 'Source Sans Pro Regular';
-    text-fill: #a9a9a9;
+    [zoom <= 13] { 
+      text-fill: #a9a9a9;
+    }
+    [zoom > 13] {
+      text-fill: #8A8A8A;
+    }
     text-size: 13;
     text-placement: line;
     text-wrap-width: 100;
@@ -340,13 +347,14 @@ Map {
 
 
 #poi_label::label {
-  ['type'='Park'] {
+  ['type'='Park'][localrank >= 2][zoom>=16] {
     text-name: [name];
     text-face-name: 'Source Sans Pro Regular';
-    text-fill: #333;
+    text-fill: #7D946C;
     text-size: 13;
-    text-comp-op: multiply;
-    text-opacity: .5;
+    text-halo-fill: fadeout(#fff, 75%);
+    text-halo-radius: 2px;
+    [zoom>=18] {text-comp-op: multiply;}
   }
 }
 #poi_label {
