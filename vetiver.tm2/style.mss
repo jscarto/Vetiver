@@ -226,22 +226,24 @@ Map {
 #road::outline,
 #tunnel::outline,
 #bridge::outline {
-  ['mapnik::geometry_type'=2] {
-    line-color: #d7d7d7;
-    [zoom >= 16] {
-      line-geometry-transform: translate(-.5,-.5);
-      line-opacity: 0.5;
-    }
-    [class='motorway'],[class='main'] {
-      [zoom>=10] { line-width: 3; }
-      [zoom>=12] { line-width: 5; }
-      [zoom>=14] { line-width: 6; }
-      [zoom>=16] { line-width: 12; }
-    }
-    [class='street'],
-    [class='street_limited'] {
-      [zoom>=14] { line-width: 4.5; }
-      [zoom>=16] { line-width: 6; }
+  [class !='path'] {
+    ['mapnik::geometry_type'=2] {
+      line-color: #d7d7d7;
+      [zoom >= 16] {
+        line-geometry-transform: translate(-.5,-.5);
+        line-opacity: 0.5;
+      }
+      [class='motorway'],[class='main'] {
+        [zoom>=10] { line-width: 3; }
+        [zoom>=12] { line-width: 5; }
+        [zoom>=14] { line-width: 6; }
+        [zoom>=16] { line-width: 12; }
+      }
+      [class='street'],
+      [class='street_limited'] {
+        [zoom>=14] { line-width: 4.5; }
+        [zoom>=16] { line-width: 6; }
+      }
     }
   }
 }
@@ -264,12 +266,27 @@ Map {
       [zoom>=16] { line-width: 4; }
     }
     [class='street_limited'] { line-dasharray: 4,1; }
-    [class='path'] { 
-      line-color: #fff;
-      line-width: 1;
-      line-dasharray: 2,2;
-      line-opacity: 0.75;
-      line-comp-op: screen;
+    [class='path'] {
+     [zoom < 15] { 
+       line-width: 0.4;
+       line-color: #fff;
+       line-opacity: 0.5;
+       line-comp-op: screen;
+     }
+      [zoom >= 15] { 
+      	line-width: 0.75;
+        line-color: #fff;
+        line-dasharray: 2,2;
+        line-opacity: 0.75;
+        line-comp-op: screen;
+     }
+       [zoom >= 17] { 
+        line-width: 1;
+        line-color: #fff;
+        line-dasharray: 2,2;
+        line-opacity: .75;
+        line-comp-op: screen;
+     }
     }
   }
 }
@@ -320,7 +337,7 @@ Map {
     [zoom>=16] {
       polygon-fill: #221E29;
       image-filters:agg-stack-blur(16,12);
-      polygon-geometry-transform: translate(10,6);
+      polygon-geometry-transform: translate(6,4);
       polygon-opacity: 0.1;
       polygon-comp-op: multiply;
   	}
