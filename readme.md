@@ -13,3 +13,6 @@ It was originally designed as a campus map of the Pennsylvania State University 
 * Set type in a more distinct typeface + tweak street label repetitions
 * Standardize appearance across scale
 * Broaden use for general, large scale reference mapping
+
+## Acknowledgements
+This work was supported by Pennsylvania State University and the National Science Foundation under an IGERT award \#DGE-1144860, Big Data Social Science.
